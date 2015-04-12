@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="../../angular.min.js"></script>
+<script src="js/app.js"></script>
+</head>
+<body>
+	<div ng-controller="FirstController">
+		<h4>simple add</h4>
+		<p>{{count}}</p>
+		<button ng-click="add()">add</button>
+		<button ng-click="subtract()">subtract</button>
+	</div>
+	<div ng-controller="ParentController">
+		<div ng-controller="ChildController">
+			<a ng-click="sayHello()">sayhello</a>
+		</div>
+		<h1>{{person}}</h1>
+	</div>
+</body>
+</html>
