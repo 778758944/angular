@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="../../angular.min.js"></script>
+<script src="app/app2.js"></script>
+</head>
+<body>
+    <form name="signup_form" ng-controller="myForm" novalidate>
+    	<div ng-repeat="input in inputs" ng-form="signup_form_input">
+    		<input type="text" placeholder="{{input.placeholder}}" ng-required="{{input.required}}" name="kala">
+    		<div ng-show="signup_form_input.kala.$dirty&&signup_form_input.kala.$invalid">
+    			<span ng-show="signup_form_input.kala.$error.required">
+    				this field required
+    			</span>
+    		</div>
+    	</div>
+    	<button type="submit" ng-disabled="signup_form_input.$invalid">
+    		submit All
+    	</button>
+    </form>
+    <div ng-controller="CityController">
+    	<select ng-model="city" ng-options="city.name for city in cities">
+    		<option value="">Choose a city</option>
+    	</select>
+    	<p>best city {{city.name}}</p>
+    </div>
+</body>
+</html>
