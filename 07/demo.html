@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="../../angular.min.js"></script>
+<script src="app/demo.js"></script>
+</head>
+<body>
+    <div ng-app="App" ng-init="someProperty='somedate'">
+    <div ng-init="siblingProperty='moredata'">
+    	inside div two:{{aThirdProperty}}
+    	<div ng-init="aThridProperty='data for 3rd property'" ng-controller="SomeController">
+    		inside div three:{{aThridProperty}}
+    		<div ng-init="aFourthProperty" ng-controller="SecondController">
+    			Inside Div four:{{aThridProperty}}
+    			<br/>
+    			outside myDirective:{{myProperty}}
+    			<div m-directive ng-init="myProperty='this is cool'">
+    				inside myDirective:{{myProperty}}
+    			</div>
+    		</div>
+    	</div>
+    </div>	
+    <div ng-controller="MainController">
+    	inside div kk:{{myProperty2}}
+    	<div my-directive2 ng-init="myProperty2='wow,this cool'"></div>
+    </div>
+    <div ng-init="myProperty3='wow, this is cool'">
+    	Surrounding scope:{{myProperty3}}
+    	<div my-inhert-scope-directive></div>
+    	<div my-directive3></div>
+    </div>
+    </div>
+</body>
+</html>
